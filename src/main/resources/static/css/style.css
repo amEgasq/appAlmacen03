@@ -1,0 +1,37 @@
+ /* Estilo extra para centrar verticalmente en la pantalla */
+ body, html {
+     height: 100%;
+ }
+ .main-container {
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+  .voucher-card {
+     background: #ffffff;
+     border-radius: 15px;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+     max-width: 400px;
+     width: 100%;
+     padding: 2rem;
+     position: relative;
+ }
+ /* Estilo de línea punteada tipo ticket */
+ .voucher-line {
+     border-top: 2px dashed #dee2e6;
+     margin: 1.5rem 0;
+ }
+ .table-voucher th {
+     font-weight: 500;
+     color: #6c757d;
+ }
+ .table-voucher td {
+     text-align: right;
+ }
+ .total-row {
+     font-size: 1.25rem;
+     font-weight: bold;
+     color: #0d6efd;
+ }

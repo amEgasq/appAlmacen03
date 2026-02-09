@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	
+	<th:block th:replace="~{layouts/plantilla :: cabecera}"></th:block>
+	
+	<body>
+		
+		<th:block th:replace="~{layouts/plantilla :: menu}"></th:block>
+		
+	    <div class="container main-container">
+	    	    
+	    <!-- INICIO DEL CONTENIDO -->
+	        <div class="card shadow-sm" style="max-width: 500px; width: 100%;">
+	            <div class="card-body p-4">
+	            	
+	                <h3 class="card-title text-center mb-4">Registro de Producto</h3>
+	                
+	                <form th:action="@{/calcular}" th:object="${objProducto}" method="POST" class="needs-validation" novalidate>
+	                    
+	                    <div class="mb-3">
+	                        <label for="nombreProducto" class="form-label">Nombre</label>
+	                        <input type="text" th:field="*{nombre}" class="form-control"  placeholder="" required>
+	                        <div class="invalid-feedback">
+	                            Por favor, ingresa el nombre del producto.
+	                        </div>
+	                    </div>
+	
+	                    <div class="mb-3">
+	                        <label for="precioProducto" class="form-label">Precio</label>
+	                        <div class="input-group has-validation">
+	                            <span class="input-group-text">S/.</span>
+	                            <input type="number" th:field="*{precio}" step="0.01" class="form-control"  placeholder="0.00" required>
+	                            <div class="invalid-feedback">
+	                                El precio es obligatorio.
+	                            </div>
+	                        </div>
+	                    </div>
+	
+	                    <div class="mb-3">
+	                        <label for="cantidadProducto" class="form-label">Cantidad</label>
+	                        <input type="number" th:field="*{cantidad}" class="form-control"  placeholder="Cantidad disponible" required min="1">
+	                        <div class="invalid-feedback">
+	                            Ingresa una cantidad válida (mínimo 1).
+	                        </div>
+	                    </div>
+	
+	                    <div class="d-grid gap-2 mt-4">
+	                        <button class="btn btn-primary" type="submit">Calcular</button>
+	                    </div>
+	                
+	                </form>
+	
+	            </div>
+	        </div>
+	    <!-- INICIO DEL CONTENIDO -->
+	    </div>
+		
+		<th:block th:replace="~{layouts/plantilla :: pie}"></th:block>
+
+	</body>
+	
+</html>
