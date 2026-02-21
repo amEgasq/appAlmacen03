@@ -19,7 +19,7 @@ public class ProductoController {
 	
 	@PostMapping("/calcular")
 	public String calcularProducto(@ModelAttribute("producto") Producto objProducto, Model model) {
-		//Logica de negocios
+		
 		double subtotal = objProducto.getPrecio() * objProducto.getCantidad();
 		double descuento = 0.0;
 		
